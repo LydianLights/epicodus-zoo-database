@@ -1,12 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Animal, Diet, Sex} from './models/animal.model';
 
 @Component({
   selector: 'animal-list',
-  template: `
-    <p>Test</p>
-  `
+  templateUrl: 'src/templates/animal-list.html'
 })
 
 export class AnimalListComponent {
-
+  @Input() animalList: Animal[];
 }
