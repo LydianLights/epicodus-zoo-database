@@ -67,7 +67,12 @@ gulp.task('bower-clean-css', function(){
 
 // =========== Browser Sync =========== //
 gulp.task('watch', function() {
-  gulp.start('build');
+  try {
+    gulp.start('build');
+  }
+  catch (e) {
+    console.log(e);
+  }
   browserSync.init({
     server: {
       baseDir: "./",
