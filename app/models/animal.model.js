@@ -23,6 +23,47 @@ var Animal = (function () {
         this.likes = likes;
         this.dislikes = dislikes;
     }
+    Animal.prototype.getDietAsString = function () {
+        if (this.diet === Diet.Carnivore) {
+            return "Carnivore";
+        }
+        if (this.diet === Diet.Herbivore) {
+            return "Herbivore";
+        }
+        if (this.diet === Diet.Omnivore) {
+            return "Omnivore";
+        }
+        return "";
+    };
+    Animal.prototype.getSexAsString = function () {
+        if (this.sex === Sex.Male) {
+            return "Male";
+        }
+        if (this.sex === Sex.Female) {
+            return "Female";
+        }
+        return "";
+    };
+    Animal.prototype.getLikesAsString = function () {
+        var output = "";
+        for (var i = 0; i < this.likes.length; i++) {
+            output += (i > 0) ? this.likes[i].toLowerCase() : this.likes[i];
+            if (i < this.likes.length - 1) {
+                output += ", ";
+            }
+        }
+        return output;
+    };
+    Animal.prototype.getDislikesAsString = function () {
+        var output = "";
+        for (var i = 0; i < this.dislikes.length; i++) {
+            output += (i > 0) ? this.dislikes[i].toLowerCase() : this.dislikes[i];
+            if (i < this.dislikes.length - 1) {
+                output += ", ";
+            }
+        }
+        return output;
+    };
     return Animal;
 }());
 exports.Animal = Animal;

@@ -1,3 +1,14 @@
-<div *ngFor="let animal of animalList" id="animal-list">
-  <p>test</p>
+<div id="animal-list">
+  <div *ngFor="let animal of animalList" class="animal-entry">
+    <p>Species: {{animal.species}}</p>
+    <p>Name: {{animal.name}}</p>
+    <p>Age: {{animal.age}} yrs.</p>
+    <p>Sex: {{animal.getSexAsString()}}</p>
+    <p>Diet: {{animal.getDietAsString()}}</p>
+    <p>Location: {{animal.location}}</p>
+    <p>Caretakers: {{animal.caretakers}}</p>
+    <p>Likes: {{animal.getLikesAsString()}}</p>
+    <p>Dislikes: {{animal.getDislikesAsString()}}</p>
+    <hr>
+  </div>
 </div>
