@@ -1,0 +1,47 @@
+<h2>Add an animal</h2>
+<form id="new-animal-form">
+  <div class="form-group">
+    <label for="new-animal-species">Species: </label>
+    <input #newAnimalSpecies class="form-control" id="new-animal-species" name="new-animal-species" type="text" placeholder="Enter species" required>
+  </div>
+  <div class="form-group">
+    <label for="new-animal-name">Name: </label>
+    <input #newAnimalName class="form-control" id="new-animal-name" name="new-animal-name" type="text" placeholder="Enter name" required>
+  </div>
+  <div class="form-group">
+    <label for="new-animal-age">Age: </label>
+    <input #newAnimalAge class="form-control" id="new-animal-age" name="new-animal-age" type="text" placeholder="Enter age in years" required>
+  </div>
+  <div class="form-group">
+    <label for="new-animal-sex">Sex: </label>
+    <select #newAnimalSex class="form-control" id="new-animal-sex" name="new-animal-sex" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="new-animal-diet">Diet: </label>
+    <select #newAnimalDiet class="form-control" id="new-animal-diet" name="new-animal-diet" required>
+      <option value="carnivore">Carnivore</option>
+      <option value="herbivore">Herbivore</option>
+      <option value="omnivore">Omnivore</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="new-animal-location">Location: </label>
+    <input #newAnimalLocation class="form-control" id="new-animal-location" name="new-animal-location" type="text" placeholder="Enter location" required>
+  </div>
+  <div class="form-group">
+    <label for="new-animal-caretakers">Caretakers: </label>
+    <input #newAnimalCaretakers class="form-control" id="new-animal-caretakers" name="new-animal-caretakers" type="text" placeholder="Enter number of caretakers" required>
+  </div>
+  <div class="form-group">
+    <label for="new-animal-likes">Likes: </label>
+    <input #newAnimalLikes class="form-control" id="new-animal-likes" name="new-animal-likes" type="text" placeholder="Enter comma-separated likes" required>
+  </div>
+  <div class="form-group">
+    <label for="new-animal-dislikes">Dislikes: </label>
+    <input #newAnimalDislikes class="form-control" id="new-animal-dislikes" name="new-animal-dislikes" type="text" placeholder="Enter comma-separated dislikes" required>
+  </div>
+  <button (click)="submitNewAnimal({species: newAnimalSpecies.value, name: newAnimalName.value, age: newAnimalAge.value, sex: newAnimalSex.value, diet: newAnimalDiet.value, location: newAnimalLocation.value, caretakers: newAnimalCaretakers.value, likes: newAnimalLikes.value, dislikes: newAnimalDislikes.value})" class="btn btn-default" type="submit">Add</button>
+</form>

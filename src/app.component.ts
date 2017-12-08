@@ -12,6 +12,10 @@ export class AppComponent {
     this.initializeAnimalList();
   }
 
+  addNewAnimal(animal) {
+    this.masterAnimalList.push(animal);
+  }
+
   initializeAnimalList() {
     this.masterAnimalList[0] = new Animal(
       'Arctic Fox',
