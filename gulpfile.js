@@ -16,13 +16,12 @@ var lib = require('bower-files')({
     }
   }
 });
-var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 
 var isProductionBuild = utilities.env.production;
 
 // =========== Main Build =========== //
-gulp.task('build', ['ts-build', 'sass-build', 'bower-build'], function(){});
+gulp.task('build', ['ts-build', 'css-build', 'bower-build'], function(){});
 
 // =========== Typescript =========== //
 gulp.task('ts-build', ['ts-clean'], shell.task(['tsc --outDir app']));
@@ -31,13 +30,15 @@ gulp.task('ts-clean', function(){
   return del(['app/*.js', 'app/*.js.map']);
 });
 
-// =========== SASS =========== //
-gulp.task('sass-build', function() {
-  return gulp.src(['resources/styles/*'])
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(sourcemaps.write())
+// =========== CSS =========== //
+gulp.task('css-build', ['css-clean'], function() {
+  return gulp.src(['resources/styles/*.css'])
+    .pipe(concat('master.css'))
     .pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('css-clean', function() {
+  return del(['build/css/master.css']);
 });
 
 // =========== Bower =========== //
@@ -65,7 +66,8 @@ gulp.task('bower-clean-css', function(){
 });
 
 // =========== Browser Sync =========== //
-gulp.task('watch', ['build'], function() {
+gulp.task('watch', function() {
+  gulp.start('build');
   browserSync.init({
     server: {
       baseDir: "./",
@@ -86,7 +88,7 @@ gulp.task('html-sync', function(){
   browserSync.reload();
 });
 
-gulp.task('css-sync', ['sass-build'], function(){
+gulp.task('css-sync', ['css-build'], function(){
   browserSync.reload("*.css");
 });
 
