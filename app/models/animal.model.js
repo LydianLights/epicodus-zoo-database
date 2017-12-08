@@ -23,6 +23,55 @@ var Animal = (function () {
         this.likes = likes;
         this.dislikes = dislikes;
     }
+    Animal.parseSex = function (input) {
+        if (input === 'male') {
+            return Sex.Male;
+        }
+        if (input === 'female') {
+            return Sex.Female;
+        }
+    };
+    Animal.parseDiet = function (input) {
+        if (input === 'carnivore') {
+            return Diet.Carnivore;
+        }
+        if (input === 'herbivore') {
+            return Diet.Herbivore;
+        }
+        if (input === 'omnivore') {
+            return Diet.Omnivore;
+        }
+    };
+    Animal.parseStringList = function (input) {
+        return input.split(',');
+    };
+    Animal.prototype.editSpecies = function (input) {
+        this.species = input;
+    };
+    Animal.prototype.editName = function (input) {
+        this.name = input;
+    };
+    Animal.prototype.editAge = function (input) {
+        this.age = parseFloat(input);
+    };
+    Animal.prototype.editSex = function (input) {
+        this.sex = Animal.parseSex(input);
+    };
+    Animal.prototype.editDiet = function (input) {
+        this.diet = Animal.parseDiet(input);
+    };
+    Animal.prototype.editLocation = function (input) {
+        this.location = input;
+    };
+    Animal.prototype.editCaretakers = function (input) {
+        this.caretakers = parseInt(input);
+    };
+    Animal.prototype.editLikes = function (input) {
+        this.likes = Animal.parseStringList(input);
+    };
+    Animal.prototype.editDislikes = function (input) {
+        this.dislikes = Animal.parseStringList(input);
+    };
     Animal.prototype.getDietAsString = function () {
         if (this.diet === Diet.Carnivore) {
             return "Carnivore";

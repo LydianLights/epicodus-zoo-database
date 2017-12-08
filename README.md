@@ -30,7 +30,7 @@ This project requires [Node.js](https://nodejs.org/en/)
 
 ## Known Bugs
 
-* _none_
+* Editable fields behave kind of strangely. Sometimes they don't submit on the first click.
 
 ### License
 

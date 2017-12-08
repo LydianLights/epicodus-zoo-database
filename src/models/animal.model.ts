@@ -21,6 +21,47 @@ export class Animal {
     public likes: string[],
     public dislikes: string[]) {}
 
+    static parseSex(input: string) {
+      if (input === 'male') {return Sex.Male;}
+      if (input === 'female') {return Sex.Female;}
+    }
+    static parseDiet(input: string) {
+      if (input === 'carnivore') {return Diet.Carnivore;}
+      if (input === 'herbivore') {return Diet.Herbivore;}
+      if (input === 'omnivore') {return Diet.Omnivore;}
+    }
+    static parseStringList(input: string) {
+      return input.split(',');
+    }
+
+    editSpecies(input: string) {
+      this.species = input;
+    }
+    editName(input: string) {
+      this.name = input;
+    }
+    editAge(input: string) {
+      this.age = parseFloat(input);
+    }
+    editSex(input: string) {
+      this.sex = Animal.parseSex(input);
+    }
+    editDiet(input: string) {
+      this.diet = Animal.parseDiet(input);
+    }
+    editLocation(input: string) {
+      this.location = input;
+    }
+    editCaretakers(input: string) {
+      this.caretakers = parseInt(input);
+    }
+    editLikes(input: string) {
+      this.likes = Animal.parseStringList(input);
+    }
+    editDislikes(input: string) {
+      this.dislikes = Animal.parseStringList(input);
+    }
+
     getDietAsString() {
       if (this.diet === Diet.Carnivore) {return "Carnivore";}
       if (this.diet === Diet.Herbivore) {return "Herbivore";}

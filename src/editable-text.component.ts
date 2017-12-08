@@ -7,4 +7,19 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 export class EditableTextComponent {
   @Input() displayText: string;
+  @Output() editSender = new EventEmitter();
+  editText: string;
+  editModeActive: boolean = false;
+
+  activateEditMode() {
+    this.editText = this.displayText;
+    this.editModeActive = true;
+  }
+  exitEditMode() {
+    this.editModeActive = false;
+  }
+  submitAndExitEditMode() {
+    this.editSender.emit(this.editText);
+    this.exitEditMode();
+  }
 }

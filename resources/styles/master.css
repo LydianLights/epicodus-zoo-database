@@ -1,0 +1,10 @@
+.inline-form {
+  display: inline;
+}
+.icon-button {
+  padding: 3px;
+  cursor: pointer;
+}
+.icon-button:hover {
+  border: solid black 1px;
+}

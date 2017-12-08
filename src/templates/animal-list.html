@@ -1,15 +1,42 @@
 <div id="animal-list">
   <hr>
   <div *ngFor="let animal of animalList" class="animal-entry">
-    <p><editable-text [displayText]="'Species: '  + animal.species"></editable-text></p>
-    <p><editable-text [displayText]="'Name: '  + animal.name"></editable-text></p>
-    <p><editable-text [displayText]="'Age: '  + animal.age"></editable-text></p>
-    <p><editable-text [displayText]="'Sex: '  + animal.getSexAsString()"></editable-text></p>
-    <p><editable-text [displayText]="'Diet: '  + animal.getDietAsString()"></editable-text></p>
-    <p><editable-text [displayText]="'Location: '  + animal.location"></editable-text></p>
-    <p><editable-text [displayText]="'Caretakers: '  + animal.caretakers"></editable-text></p>
-    <p><editable-text [displayText]="'Likes: '  + animal.getLikesAsString()"></editable-text></p>
-    <p><editable-text [displayText]="'Dislikes: '  + animal.getDislikesAsString()"></editable-text></p>
+    <p>
+      Species:
+      <editable-text [displayText]="animal.species" (editSender)="animal.editSpecies($event)"></editable-text>
+    </p>
+    <p>
+      Name:
+      <editable-text [displayText]="animal.name" (editSender)="animal.editName($event)"></editable-text>
+    </p>
+    <p>
+      Age:
+      <editable-text [displayText]="animal.age" (editSender)="animal.editAge($event)"></editable-text>
+    </p>
+    <p>
+      Sex:
+      <editable-text [displayText]="animal.getSexAsString()" (editSender)="animal.editSex($event)"></editable-text>
+    </p>
+    <p>
+      Diet:
+      <editable-text [displayText]="animal.getDietAsString()" (editSender)="animal.editDiet($event)"></editable-text>
+    </p>
+    <p>
+      Location:
+      <editable-text [displayText]="animal.location" (editSender)="animal.editLocation($event)"></editable-text>
+    </p>
+    <p>
+      Caretakers:
+      <editable-text [displayText]="animal.caretakers" (editSender)="animal.editCaretakers($event)"></editable-text>
+    </p>
+    <p>
+      Likes:
+      <editable-text [displayText]="animal.getLikesAsString()" (editSender)="animal.editLikes($event)"></editable-text>
+    </p>
+    <p>
+      Dislikes:
+      <editable-text [displayText]="animal.getDislikesAsString()" (editSender)="animal.editDislikes($event)"></editable-text>
+    </p>
     <hr>
   </div>
 </div>

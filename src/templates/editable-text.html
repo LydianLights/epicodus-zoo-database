@@ -1,1 +1,10 @@
-{{displayText}} <span class="edit-button mdi mdi-pencil"></span>
+<span *ngIf="!editModeActive">
+  {{displayText}} <span class="icon-button mdi mdi-pencil" (click)="activateEditMode()"></span>
+</span>
+<span *ngIf="editModeActive">
+  <form class="inline-form">
+    <input [(ngModel)]="editText" name="editable-text-input" type="text">
+    <button type="submit"><span class="mdi mdi-check" (click)="submitAndExitEditMode()"></span></button>
+    <button type="button"><span class="mdi mdi-close" (click)="exitEditMode()"></span></button>
+  </form>
+</span>
