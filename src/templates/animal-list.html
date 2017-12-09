@@ -1,6 +1,16 @@
 <div id="animal-list">
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="age-filter">Filter by age:</label>
+      <select class="form-control" id="age-filter" name="age-filter" [(ngModel)]="filterType">
+        <option value="all-ages">Show All</option>
+        <option value="less-than-2">All &lt; 2 Years</option>
+        <option value="greater-than-2">All &gt;= 2 Years</option>
+      </select>
+    </div>
+  </form>
   <hr>
-  <div *ngFor="let animal of animalList" class="animal-entry">
+  <div *ngFor="let animal of animalList | filterAnimalList:filterType" class="animal-entry">
     <p>
       Species:
       <editable-text [displayText]="animal.species" (editSender)="animal.editSpecies($event)"></editable-text>

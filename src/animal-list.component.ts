@@ -8,4 +8,5 @@ import {Animal, Diet, Sex} from './models/animal.model';
 
 export class AnimalListComponent {
   @Input() animalList: Animal[];
+  filterType: string;
 }
