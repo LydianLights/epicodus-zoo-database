@@ -1,4 +1,4 @@
-# Portland Area Doctor Lookup
+# Zoo Database
 
 #### _Code review project for Epicodus Javascript week 3_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-[TODO]
+This app lets an employee view and update a database of the zoo's animals
 
 ## User-Story Specs
 
