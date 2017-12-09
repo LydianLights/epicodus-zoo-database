@@ -2,6 +2,7 @@
   <div class="jumbotron">
     <h1>zoo-database</h1>
   </div>
+  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#new-animal-modal">Add Animal</button>
   <new-animal (newAnimalSender)="addNewAnimal($event)"></new-animal>
   <animal-list [animalList]="masterAnimalList"></animal-list>
 </div>
