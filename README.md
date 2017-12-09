@@ -32,6 +32,7 @@ This project requires [Node.js](https://nodejs.org/en/)
 
 * Editable fields behave kind of strangely. Sometimes they don't submit on the first click.
 * Editable fields that aren't plain strings need to be input in the correct format to avoid breaking
+* Material design icons are linked directly though the bower_components folder instead of though gulp-bower
 
 ### License
 
