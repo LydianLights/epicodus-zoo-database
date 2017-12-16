@@ -12,21 +12,25 @@ This app lets an employee view and update a database of the zoo's animals
 
 Specs can be found [here.](./SPECS.md)
 
-## Setup/Installation Requirements
+## Requirements
+
+This project requires [Node.js](https://nodejs.org/en/)
+
+Once Node is installed, two global packages are required. They can be installed with the following commands:
+
+* `$ npm install gulp -g`
+* `$ npm install bower -g`
+
+## Installation
 
 To download and use the source code of this project:
 
-* Clone the project using this link: [TODO]
-* Install `Node.js`. You can get it  [here](https://nodejs.org/en/).
-* Navigate the project root folder in the terminal
+* Clone the project using this link: https://github.com/RaneFields/epicodus-zoo-database.git
+* Navigate to the project root folder in the terminal
 * Run `$ npm install`
 * Run `$ bower install`
 * Run `$ gulp build`
 * To host the webpage and view it in the browser, run `$ gulp watch`
-
-## Technologies Used
-
-This project requires [Node.js](https://nodejs.org/en/)
 
 ## Known Bugs
 
