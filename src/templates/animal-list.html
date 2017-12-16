@@ -25,11 +25,11 @@
     </p>
     <p>
       Sex:
-      <editable-text [displayText]="animal.getSexAsString()" (editSender)="animal.editSex($event)"></editable-text>
+      <editable-text [displayText]="animal.getSexAsString()" [inputType]="'select'" [selectOptions]="[{text: 'Male', value: 'male'}, {text: 'Female', value: 'female'}]" [initialOptionValue]="'male'" (editSender)="animal.editSex($event)"></editable-text>
     </p>
     <p>
       Diet:
-      <editable-text [displayText]="animal.getDietAsString()" (editSender)="animal.editDiet($event)"></editable-text>
+      <editable-text [displayText]="animal.getDietAsString()" [inputType]="'select'" [selectOptions]="[{text: 'Carnivore', value: 'carnivore'}, {text: 'Herbivore', value: 'herbivore'}, {text: 'Omnivore', value: 'omnivore'}]" [initialOptionValue]="'carnivore'" (editSender)="animal.editDiet($event)"></editable-text>
     </p>
     <p>
       Location:

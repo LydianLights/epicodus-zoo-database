@@ -4,6 +4,9 @@
 <span *ngIf="editModeActive">
   <form class="inline-form" (ngSubmit)="submitAndExitEditMode()">
     <input *ngIf="inputType === 'text'" [(ngModel)]="editText" name="editable-text-input" type="text">
+    <select [(ngModel)]="editText" *ngIf="inputType === 'select'" class="editable-text-select" name="editable-text-select">
+      <option *ngFor="let option of selectOptions" value="{{option.value}}">{{option.text}}</option>
+    </select>
     <button type="submit"><span class="mdi mdi-check"></span></button>
     <button type="button"><span class="mdi mdi-close" (click)="exitEditMode()"></span></button>
   </form>

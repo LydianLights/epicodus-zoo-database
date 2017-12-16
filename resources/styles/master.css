@@ -8,3 +8,9 @@
 .icon-button:hover {
   border: solid black 1px;
 }
+.editable-text-select {
+  display: inline;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  width: 100px;
+}
