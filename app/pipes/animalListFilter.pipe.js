@@ -17,7 +17,7 @@ var AnimalListFilterPipe = (function () {
         }
         else {
             input.forEach(function (animal) {
-                if (filterType === "less-than-2" && animal.age < 2 || filterType === "greater-than-2" && animal.age >= 2) {
+                if (filterType === "less-than-3" && animal.age < 3 || filterType === "greater-than-3" && animal.age >= 3) {
                     output.push(animal);
                 }
             });
