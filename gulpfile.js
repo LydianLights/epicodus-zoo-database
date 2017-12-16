@@ -16,7 +16,8 @@ var lib = require('bower-files')({
     },
     "mdi" : {
       "main": [
-        "css/materialdesignicons.min.css"
+        "css/materialdesignicons.min.css",
+        "fonts/*"
       ]
     }
   }
@@ -47,7 +48,7 @@ gulp.task('css-clean', function() {
 });
 
 // =========== Bower =========== //
-gulp.task('bower-build', ['bower-js', 'bower-css']);
+gulp.task('bower-build', ['bower-js', 'bower-css', 'bower-fonts']);
 
 gulp.task('bower-js', ['bower-clean-js'], function() {
   return gulp.src(lib.ext('js').files)
@@ -68,6 +69,15 @@ gulp.task('bower-css', ['bower-clean-css'], function() {
 
 gulp.task('bower-clean-css', function(){
   return del(['./build/css/vendor.css']);
+});
+
+gulp.task('bower-fonts', ['bower-clean-fonts'], function() {
+  return gulp.src(lib.ext(['woff2', 'woff', 'ttf']).files)
+    .pipe(gulp.dest('./build/fonts'));
+});
+
+gulp.task('bower-clean-fonts', function(){
+  return del(['./build/fonts/*']);
 });
 
 // =========== Browser Sync =========== //
