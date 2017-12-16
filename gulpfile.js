@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
+var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
@@ -38,8 +39,10 @@ gulp.task('ts-clean', function(){
 
 // =========== CSS =========== //
 gulp.task('css-build', ['css-clean'], function() {
-  return gulp.src(['resources/styles/*.css'])
-    .pipe(concat('master.css'))
+  return gulp.src(['resources/styles/*'])
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'));
 });
 

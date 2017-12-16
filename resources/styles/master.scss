@@ -1,13 +1,16 @@
 .inline-form {
   display: inline;
 }
+
 .icon-button {
   padding: 3px;
   cursor: pointer;
+
+  &:hover {
+    border: solid black 1px;
+  }
 }
-.icon-button:hover {
-  border: solid black 1px;
-}
+
 .editable-text-select {
   display: inline;
   padding-top: 3px;
